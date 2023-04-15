@@ -7,6 +7,7 @@ public class Main {
         switch (scan.nextInt()) {
             case 1 -> ejercicio1();
             case 2 -> ejercicio2();
+            case 3 -> ejercicio3();
         }
     }
 
@@ -80,4 +81,7 @@ public class Main {
         }
     }
 
+    public static void ejercicio3(){
+
+    }
 }
