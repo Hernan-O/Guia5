@@ -58,7 +58,7 @@ public class Electrodomestico {
     }
 
     public void elegirColor() {
-        System.out.println("Que color será el electrodomestico:\n1-Blancp\n2-Negro\n3-Rojo\n4-Azul\n5-Gris");
+        System.out.println("Que color será el electrodomestico:\n1-Blanco\n2-Negro\n3-Rojo\n4-Azul\n5-Gris");
         Scanner col = new Scanner(System.in);
         switch (col.nextInt()) {
             case 1 -> setColor("Blanco");
@@ -77,11 +77,22 @@ public class Electrodomestico {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Electrodomestico{" +
+                "precioBase=" + precioBase +
+                ", color='" + color + '\'' +
+                ", consumo=" + consumo +
+                ", peso=" + peso +
+                '}';
+    }
+
     public void comprobarColor(String color) {
         if (color.equalsIgnoreCase("Blanco") || color.equalsIgnoreCase("Negro") || color.equalsIgnoreCase("Azul") || color.equalsIgnoreCase("Gris") || color.equalsIgnoreCase("Rojo")) {
         } else {
             this.setColor("Blanco");
         }
+
     }
 
     public void precioFinal() {
