@@ -8,6 +8,7 @@ public class Main {
             case 1 -> ejercicio1();
             case 2 -> ejercicio2();
             case 3 -> ejercicio3();
+            case 4 -> ejercicio4();
         }
     }
 
@@ -135,5 +136,60 @@ public class Main {
         electrodomesticos[8] = new Lavadora(28, 120, 65, "negro", 'C');
         electrodomesticos[9] = new Lavadora(32, 280, 75, "rojo", 'D');
         return electrodomesticos;
+    }
+
+    public static void ejercicio4() {
+        Serie[] series = new Serie[5];
+        Videojuego[] videojuego = new Videojuego[5];
+        videojuego = generarVideojuego(5);
+        series = generarSerie(5);
+        int i = 0, VJE = 0, SE = 0, VJHE = 0, SCT = 0, maxVJ = 0, maxS = 0;
+        for (i = 0; i < 5; i++) {
+            System.out.println(videojuego[i].toString());
+            System.out.println("--------------------------------------------------------------");
+            System.out.println(series[i].toString());
+            if (videojuego[i].isEntregado()) {
+                VJE++;
+            }
+            if (series[i].isEntregado()) {
+                SE++;
+            }
+            if (series[i].cantTemp > maxS) {
+                maxS = series[i].cantTemp;
+                SCT = i;
+            }
+            if (videojuego[i].horasEst > maxVJ) {
+                maxVJ = videojuego[i].horasEst;
+                VJHE = i;
+            }
+        }
+        System.out.println("\n---------------------------------------------------------\nEl juego con mas horas es:"+videojuego[VJHE].toString()+"\nLa serie con mas temporadas es:"+series[SCT].toString());
+        System.out.println(videojuego[3].compareTo(videojuego[3]));
+        System.out.println(series[3].compareTo(series[3]));
+    }
+
+    public static Serie[] generarSerie(int dimension) {
+        Serie[] aux = new Serie[5];
+        aux[0] = new Serie("La ola", "Carlitos Tevez", "Accion", 4);
+        aux[1] = new Serie("El Resplandor", "Juan Roman Riquelme", "Suspenso", 102);
+        aux[2] = new Serie("Hola", "No se sabe", "Comedia", 1);
+        aux[3] = new Serie("Futbol", "Guille", "Deporte", 369);
+        aux[4] = new Serie("Programacion", "Chaldugod", "Documental", 5);
+        aux[3].entregar();
+        aux[0].entregar();
+        return aux;
+    }
+
+    public static Videojuego[] generarVideojuego(int dimension) {
+        Videojuego[] aux = new Videojuego[5];
+        aux[0] = new Videojuego("Fornait", 130, "Epic Games", "Accion");
+        aux[1] = new Videojuego("Conter", 1300, "Valve", "Accion");
+        aux[2] = new Videojuego("Stardew Valley", 800000, "Si", "Chill");
+        aux[3] = new Videojuego("Rocket League", 4000000, "Psyonix", "Autos"); //Jsjjsjsj cuantas horas tenia, era el tin
+        aux[4] = new Videojuego("Minecraft", 20, "Mojang", "Chill");
+        aux[0].entregar();
+        aux[1].entregar();
+        aux[4].entregar();
+        return aux;
     }
 }
