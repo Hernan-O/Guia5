@@ -9,6 +9,8 @@ public class Main {
             case 2 -> ejercicio2();
             case 3 -> ejercicio3();
             case 4 -> ejercicio4();
+            case 5 -> ejercicio5();
+            default -> System.out.println("Nao Nao! que ta fazendo!?!?!?");
         }
     }
 
@@ -163,7 +165,7 @@ public class Main {
                 VJHE = i;
             }
         }
-        System.out.println("\n---------------------------------------------------------\nEl juego con mas horas es:"+videojuego[VJHE].toString()+"\nLa serie con mas temporadas es:"+series[SCT].toString());
+        System.out.println("\n---------------------------------------------------------\nEl juego con mas horas es:" + videojuego[VJHE].toString() + "\nLa serie con mas temporadas es:" + series[SCT].toString());
         System.out.println(videojuego[3].compareTo(videojuego[3]));
         System.out.println(series[3].compareTo(series[3]));
     }
@@ -183,7 +185,7 @@ public class Main {
     public static Videojuego[] generarVideojuego(int dimension) {
         Videojuego[] aux = new Videojuego[5];
         aux[0] = new Videojuego("Fornait", 130, "Epic Games", "Accion");
-        aux[1] = new Videojuego("Conter", 1300, "Valve", "Accion");
+        aux[1] = new Videojuego("Tony Hawk's Pro Skater 4", 1300, "Neversoft", "Deporte");
         aux[2] = new Videojuego("Stardew Valley", 800000, "Si", "Chill");
         aux[3] = new Videojuego("Rocket League", 4000000, "Psyonix", "Autos"); //Jsjjsjsj cuantas horas tenia, era el tin
         aux[4] = new Videojuego("Minecraft", 20, "Mojang", "Chill");
@@ -192,4 +194,12 @@ public class Main {
         aux[4].entregar();
         return aux;
     }
+    public static void ejercicio5(){
+        Clientes[] cli = new Clientes[100];
+        cli[0] = new Minoristas(25,11,"Roman","Bolivia 3350",45032300,11,"Yerba",400,30);
+        cli[0].setPrecioTot();
+        ((Minoristas)cli[0]).precioFinal();
+        System.out.println(cli[0].toString());
+    }
+
 }
